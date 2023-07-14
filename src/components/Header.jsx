@@ -25,6 +25,8 @@ import {
   UsersIcon,
   FolderIcon,
   Square3Stack3DIcon,
+  CheckCircleIcon,
+  CreditCardIcon,
   RocketLaunchIcon,
   FaceSmileIcon,
   PuzzlePieceIcon,
@@ -104,7 +106,7 @@ const navListMenuItems = [
   },
 ];
  
-function NavListMenu() {
+function NavListMenu({MenuItemTitle, MenuItemIcon}) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
  
@@ -151,28 +153,28 @@ function NavListMenu() {
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
-              <Square3Stack3DIcon className="h-[18px] w-[18px]" />
-              Resources
+              {MenuItemIcon}
+              {MenuItemTitle}
               <ChevronDownIcon
                 strokeWidth={2.5}
-                className={`hidden h-3 w-3 transition-transform lg:block ${
+                className={`hidden h-3 w-3 transition-transform xl:block ${
                   isMenuOpen ? "rotate-180" : ""
                 }`}
               />
               <ChevronDownIcon
                 strokeWidth={2.5}
-                className={`block h-3 w-3 transition-transform lg:hidden ${
+                className={`block h-3 w-3 transition-transform xl:hidden ${
                   isMobileMenuOpen ? "rotate-180" : ""
                 }`}
               />
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden max-w-screen-xl lg:block">
+        <MenuList className="hidden max-w-screen-xl xl:block">
           <ul className="grid grid-cols-4 gap-y-2">{renderItems}</ul>
         </MenuList>
       </Menu>
-      <div className="block lg:hidden">
+      <div className="block xl:hidden">
         <Collapse open={isMobileMenuOpen}>{renderItems}</Collapse>
       </div>
     </React.Fragment>
@@ -181,7 +183,21 @@ function NavListMenu() {
  
 function NavList() {
   return (
-    <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
+    <List className="mt-4 mb-6 p-0 xl:mt-0 xl:mb-0 xl:flex-row xl:p-1">
+      <NavListMenu MenuItemTitle={"Products"} MenuItemIcon={<Square3Stack3DIcon className="h-[18px] w-[18px]" />}/>
+      <NavListMenu MenuItemTitle={"Solutions"} MenuItemIcon={<CheckCircleIcon className="h-[18px] w-[18px]" />}/>
+      <Typography
+        as="a"
+        href="#"
+        variant="small"
+        color="blue-gray"
+        className="font-normal"
+      >
+        <ListItem className="flex items-center gap-2 py-2 pr-4">
+          <CreditCardIcon className="h-[18px] w-[18px]" />
+          Pricing
+        </ListItem>
+      </Typography>
       <Typography
         as="a"
         href="#"
@@ -191,20 +207,7 @@ function NavList() {
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
           <CubeTransparentIcon className="h-[18px] w-[18px]" />
-          Blocks
-        </ListItem>
-      </Typography>
-      <NavListMenu />
-      <Typography
-        as="a"
-        href="#"
-        variant="small"
-        color="blue-gray"
-        className="font-normal"
-      >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">
-          <UserCircleIcon className="h-[18px] w-[18px]" />
-          Account
+          Learn
         </ListItem>
       </Typography>
     </List>
@@ -222,42 +225,44 @@ export default function Header() {
   }, []);
  
   return (
-    <Navbar className="px-4 py-2 rounded-none max-w-full sticky">
+    <Navbar className="px-4 py-2 rounded-none max-w-full fixed z-50">
       <div className="flex items-center justify-between text-blue-gray-900">
         <img
           src="https://unbounce.com/wp-content/themes/unbounce2019/assets/img/unbounce-icon-dark.svg?v=1"
-          className="mr-4 cursor-pointer py-1.5 lg:ml-2 w-32"
+          className="mr-4 cursor-pointer py-1.5 xl:ml-2 w-32"
         />          
-        <div className="hidden lg:flex">
+        <div className="hidden xl:flex">
           <NavList />
-          <div className="relative flex w-full gap-2 md:w-max">
-          <Input
-            type="search"
-            label="Type here..."
-            className="pr-20 rounded-none border-2"
-            containerProps={{
-              className: "min-w-[288px]",
-            }}
-          />
-          <Button size="sm" className="!absolute right-1 top-1 rounded-none">
-            Search
-          </Button>
+
+          {/* Search */}
+          <div className="flex flex-grow justify-center mx-4">
+            <div className="max-w-2xl w-full flex items-center px-3 py-1.5 bg-gray-100 text-gray-600 transition-all focus-within:text-gray-600 focus-within:shadow-md">
+              <svg className="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 172 172">
+                <g className="fill-gray-800">
+                  <path d="M64.5,14.33333c-27.6214,0 -50.16667,22.54527 -50.16667,50.16667c0,27.6214 22.54527,50.16667 50.16667,50.16667c12.52732,0 23.97256,-4.67249 32.7819,-12.31771l3.05143,3.05143v9.26628l40.03256,40.03256c3.95599,3.95599 10.37733,3.956 14.33333,0c3.956,-3.956 3.956,-10.37733 0,-14.33333l-40.03256,-40.03256h-9.26628l-3.05143,-3.05143c7.64521,-8.80934 12.31771,-20.25458 12.31771,-32.7819c0,-27.6214 -22.54527,-50.16667 -50.16667,-50.16667zM64.5,28.66667c19.87509,0 35.83333,15.95824 35.83333,35.83333c0,19.87509 -15.95825,35.83333 -35.83333,35.83333c-19.87509,0 -35.83333,-15.95825 -35.83333,-35.83333c0,-19.87509 15.95824,-35.83333 35.83333,-35.83333z"></path>
+                </g>
+              </svg>
+              <input 
+                type="text"
+                placeholder="Search"
+                className="flex-grow px-2 py-1 text-base text-gray-700 bg-transparent outline-none"
+              />
+            </div>
+          </div>
         </div>
 
-        </div>
-
-        <div className="hidden gap-2 lg:flex">
-          <Button variant="text" size="sm" color="blue-gray">
+        <div className="hidden gap-2 xl:flex">
+          <Button className="font-normal" variant="text" size="sm" color="blue-gray">
             Sign In
           </Button>
-          <Button className="rounded-none" variant="gradient" size="sm">
+          <Button className="font-normal rounded-none bg-[#050708]" size="sm">
             Sign Up
           </Button>
         </div>
         <IconButton
           variant="text"
           color="blue-gray"
-          className="lg:hidden"
+          className="xl:hidden"
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
@@ -269,11 +274,11 @@ export default function Header() {
       </div>
       <Collapse open={openNav}>
         <NavList />
-        <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-          <Button variant="outlined" size="sm" color="blue-gray" fullWidth>
+        <div className="flex w-full flex-nowrap items-center gap-2 xl:hidden">
+          <Button className="rounded-none font-normal border-black text-gray-800" variant="outlined" size="sm" fullWidth>
             Sign In
           </Button>
-          <Button className="rounded-none" variant="gradient" size="sm" fullWidth>
+          <Button className="rounded-none font-normal bg-[#050708]" size="sm" fullWidth>
             Sign Up
           </Button>
         </div>

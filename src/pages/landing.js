@@ -151,7 +151,7 @@ export default function LandingPage() {
   
           {/* Features */}
           <section className="bg-white px-5 md:px-10">
-            <div className="max-w-7xl mx-auto py-12 pb-24">
+            <div className="max-w-7xl mx-auto py-12 sm:pb-24">
               <div className="sm:space-y-16 flex flex-col items-center justify-center max-w-full">
                 {features.map((feature, index) => {
                   return (
@@ -164,21 +164,24 @@ export default function LandingPage() {
   
           {/* About */}
           <section className="bg-[#f8fafc] px-5 md:px-10">
-            <div className="max-w-7xl mx-auto py-12 pb-24">
-              <div className="flex">
+            <div className="w-full flex lg:hidden pt-8">
+              <img className="shadow-lg" src="https://d9hhrg4mnvzow.cloudfront.net/templates.unbounce.com/multor/df213ca0-multor-about_100000000000000000001o.jpg" />
+            </div>
+            <div className="max-w-7xl mx-auto py-12 sm:pb-24">
+              <div className="flex flex-col-reverse lg:flex-row">
                 {/* Left Half */}
-                <div className="px-24 xs-w-full lg:w-1/3 xl:w-1/2 items-center hidden sm:flex">
+                <div className="px-12 xl:px-24 w-full lg:w-1/2 items-center hidden lg:flex lg:block">
                   <img className="shadow-lg" src="https://d9hhrg4mnvzow.cloudfront.net/templates.unbounce.com/multor/df213ca0-multor-about_100000000000000000001o.jpg" />
                 </div>
   
                 {/* Right Half */}
-                <div className="xs-w-full lg:w-2/3 xl:w-1/2 flex flex-col justify-center">
+                <div className="xs-w-full lg:w-1/2 flex flex-col justify-center z-50">
                   <Timeline>
                     <TimelineItem>
                       <TimelineConnector />
                       <TimelineHeader className="h-3">
-                        <TimelineIcon />
-                        <Typography variant="h6" color="blue-gray" className="leading-none">
+                        <TimelineIcon/>
+                        <Typography variant="h6" color="blue-gray" className="leading-none gap-0">
                           <span className="font-semibold text-gray-800">
                             About
                           </span>
@@ -191,10 +194,10 @@ export default function LandingPage() {
                           className="font-normal text-gray-600"
                         >
                             <div className="max-w-full lg:max-w-[70%] mt-2">
-                              <p className="text-4xl font-bold text-gray-900 leading-tight [word-spacing:5px]">Describe the value of booking an appointment</p>
+                              <p className="text-2xl sm:text-4xl font-bold text-gray-900 leading-tight [word-spacing:5px]">Describe the value of booking an appointment</p>
                             </div>
                             <div className="max-w-full md:max-w-[70%] mt-2">              
-                              <p className="text-xl text-gray-800 leading-normal mt-4">
+                              <p className="text-lg sm:text-xl text-gray-800 leading-normal mt-4">
                                 No need to get clever. Tell people exactly what you&apos;re offering, then use this space to communicate your key value proposition.
                               </p>
                             </div>
@@ -223,9 +226,9 @@ export default function LandingPage() {
           </section>
           
           <footer className="bg-[#050708] px-5 md:px-10">
-            <div className="flex justify-between max-w-7xl mx-auto text-white py-4">
+            <div className="flex flex-col sm:flex-row justify-center items-center sm:justify-between max-w-7xl mx-auto text-white pb-4 pt-6 sm:pt-4">
               <img src="https://d9hhrg4mnvzow.cloudfront.net/templates.unbounce.com/multor/77034ff2-multor-logo-footer.svg" className="w-30" />
-              <div className="text-base">© 2020 Insert Name Here. All rights reserved.</div>
+              <div className="text-base pt-5 sm:pt-0 text-center">© 2020 Insert Name Here. All rights reserved.</div>
             </div>
           </footer>
   
