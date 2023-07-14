@@ -14,6 +14,9 @@ export default function Home() {
     setSwitchOn(e.target.checked);
   };
 
+  const handleIframeLoad = (e) => {
+    console.log(e.target.removeAttribute("srcdoc"));
+  }
 
   return (
     <main>
@@ -53,8 +56,8 @@ export default function Home() {
               {
                 !switchOn && (
                   <div className="mt-12 hidden md:block">
-                    <div className="p-3 w-[690px] h-[420px] overflow-hidden bg-contain bg-no-repeat" style={{"background-image": "url('/assets/laptop.png')"}}>
-                      <iframe className="w-full px-[4.1rem] pb-12 pt-2 h-full" src="/landing"></iframe>
+                    <div className="p-3 w-[690px] h-[420px] overflow-hidden bg-contain bg-no-repeat" style={{"backgroundImage": "url('/assets/laptop.png')"}}>
+                      <iframe srcdoc="Loading..." onLoad={handleIframeLoad} className="w-full px-[4.1rem] pb-12 pt-2 h-full" src="/landing"></iframe>
                     </div>
                   </div>  
                 )
@@ -63,8 +66,8 @@ export default function Home() {
             {
               !switchOn && (
                 <div className="relative hidden xl:flex flex-col justify-end w-1/3">
-                  <div className="overflow-hidden w-[350px] h-[700px] bg-contain bg-no-repeat" style={{"background-image": "url('/assets/phone.png')"}}>
-                    <iframe className="w-full pb-[4.2rem] pt-[3.7rem] ps-1.5 pe-4 h-full" src="/landing"></iframe>
+                  <div className="overflow-hidden w-[350px] h-[700px] bg-contain bg-no-repeat" style={{"backgroundImage": "url('/assets/phone.png')"}}>
+                    <iframe srcdoc="Loading..." onLoad={handleIframeLoad} className="w-full pb-[4.2rem] pt-[3.7rem] ps-1.5 pe-4 h-full" src="/landing"></iframe>
                   </div>
                 </div>  
               )
@@ -74,12 +77,12 @@ export default function Home() {
         {
           switchOn && (
             <div className="w-full h-screen max-w-7xl mx-auto pb-12 px-5 -translate-y-4">
-              <iframe className="w-full h-full border-2 border-gray-300" src="/landing"></iframe>
+              <iframe srcdoc="Loading..." onLoad={handleIframeLoad} className="w-full h-full border-2 border-gray-300" src="/landing"></iframe>
             </div>
           )
         }
         <div className="block md:hidden w-full h-screen max-w-7xl mx-auto pb-12 px-5">
-          <iframe className="w-full h-full border-2 border-gray-300" src="/landing"></iframe>
+          <iframe srcdoc="Loading..." onLoad={handleIframeLoad} className="w-full h-full border-2 border-gray-300" src="/landing"></iframe>
         </div>
       </section>
 
@@ -89,7 +92,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-between pb-5 space-y-6">
             {templates.map((template, index) => {
               return (
-                <div className="w-full lg:w-1/2 xl:w-1/3 flex justify-center">
+                <div key={index} className="w-full lg:w-1/2 xl:w-1/3 flex justify-center">
                   <Template key={index} {...template} />
                 </div>
               )

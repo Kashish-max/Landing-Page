@@ -21,7 +21,6 @@ export default function CarouselComponent({ carouselItems }) {
       prevArrow={({ handlePrev }) => (
         <IconButton
           variant="text"
-          color="black"
           size="lg"
           onClick={handlePrev}
           className="hidden lg:block !absolute top-2/4 -translate-y-2/4 left-4"
@@ -32,7 +31,6 @@ export default function CarouselComponent({ carouselItems }) {
       nextArrow={({ handleNext }) => (
         <IconButton
           variant="text"
-          color="black"
           size="lg"
           onClick={handleNext}
           className="hidden lg:block !absolute top-2/4 -translate-y-2/4 !right-4"

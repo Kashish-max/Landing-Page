@@ -1,30 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Next.js App Instructions
 
-## Getting Started
+This repository contains a Next.js application that you can run locally or deploy to a server. Follow the instructions below to get started.
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Make sure you have the following software installed on your machine:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (version 12 or above)
+- npm (Node Package Manager) or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone this repository to your local machine using the following command:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone <repository-url>
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Navigate to the project directory:
 
-## Deploy on Vercel
+   ```bash
+   cd <project-directory>
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Install the dependencies using either npm or yarn:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   # Using npm
+   npm install
+
+   # Using yarn
+   yarn
+   ```
+
+### Running the App Locally
+
+Once you have installed the dependencies, you can run the Next.js app on your local machine. Follow these steps:
+
+1. Start the development server:
+
+   ```bash
+   # Using npm
+   npm run dev
+
+   # Using yarn
+   yarn dev
+   ```
+
+2. Open your web browser and visit `http://localhost:3000` to see the app in action.
+
+### Deployment
+
+The app can be deployed to a server or cloud platform of your choice. Here are some deployment options:
+
+- [Vercel](https://vercel.com/)
+- [Netlify](https://www.netlify.com/)
+- [Heroku](https://www.heroku.com/)
+
+Refer to the respective documentation of the deployment platform for detailed instructions on how to deploy a Next.js app.
+
+### Deployment Link
+
+You can find the deployed version of the website at the following link:
+
+[Website Deployment Link](https://landing-page-alpha-nine.vercel.app/)
+
+### Video Demo
+
+A video demonstration of the website can be found at the following link:
+
+[Video Demo Link](https://drive.google.com/file/d/1e1NnfYMRJ1XxJ74CWji6SDEPZguGR0n0/view?usp=sharing)

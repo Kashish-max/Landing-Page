@@ -115,7 +115,7 @@ export default function LandingPage() {
               <div className="flex flex-wrap items-center justify-between pb-5">
                 {benefits.map((benefit, index) => {
                   return (
-                    <div className="flex justify-center xs-w-full md:w-1/2 lg:w-1/3">
+                    <div key={index} className="flex justify-center xs-w-full md:w-1/2 lg:w-1/3">
                       <div key={index} className="flex max-w-sm sm:p-6 bg-white">
                         <div>
                           <img src={benefit.logo} className="w-20" />

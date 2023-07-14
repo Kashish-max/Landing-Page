@@ -67,7 +67,7 @@ const navListMenuItems = [
           size="sm"
           color="green"
           variant="ghost"
-          value="We're hiring!"
+          value="We&apos;re hiring!"
           className="capitalize"
         />
       </div>
@@ -102,7 +102,7 @@ const navListMenuItems = [
     color: "pink",
     icon: GiftIcon,
     title: "Open Source",
-    description: "List of all our open-source projects, it's all free.",
+    description: "List of all our open-source projects, it&apos;s all free.",
   },
 ];
  
@@ -128,7 +128,7 @@ function NavListMenu({MenuItemTitle, MenuItemIcon}) {
             >
               {title}
             </Typography>
-            <Typography variant="small" color="gray" className="font-normal">
+            <Typography variant="small" className="font-normal">
               {description}
             </Typography>
           </div>

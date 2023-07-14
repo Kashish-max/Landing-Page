@@ -1,7 +1,7 @@
-import { Fragment, useRef, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { BookmarkIcon } from '@heroicons/react/24/outline'
-import BookingForm from './Form'
+import { Fragment, useRef, useState } from "react"
+import { Dialog, Transition } from "@headlessui/react"
+import { BookmarkIcon } from "@heroicons/react/24/outline"
+import BookingForm from "./Form"
 
 export default function Book({ open, setOpen }) {
   const cancelButtonRef = useRef(null)

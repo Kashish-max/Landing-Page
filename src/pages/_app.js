@@ -2,7 +2,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 import { wrapper } from "@/store/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { useStore } from "react-redux";
-import '@/styles/globals.scss'
+import "@/styles/globals.scss"
 
 function App({ Component, pageProps }) {
   const store = useStore();
