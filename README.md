@@ -14,13 +14,13 @@ Make sure you have the following software installed on your machine:
 1. Clone this repository to your local machine using the following command:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Kashish-max/Landing-Page.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd <project-directory>
+   cd Landing-Page/
    ```
 
 3. Install the dependencies using either npm or yarn:
